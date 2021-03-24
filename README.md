@@ -44,3 +44,26 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+##
+
+Orientações
+
+- Desenvolver a aplicação abaixo usando ReactJS e qualquer outra biblioteca que achar necessária.
+- Publicar a aplicação no Github ou Gitlab de forma pública com no mínimo os seguintes recursos:
+  o Código fonte completo da aplicação utilizando principalmente ReactJS
+  o Testes unitários feitos preferencialmente em Enzyme ou React Test Library
+  o Folha de estilos preferencialmente utilizando SASS
+  o Readme com detalhes para instalação e configuração da aplicação
+- Principais pontos de avaliação:
+  o Boas práticas de componentização
+  o Código e estrutura de projeto limpa (responsabilidade única, código legível, etc.)
+- Documentação das APIs do Github: https://docs.github.com/en/rest
+
+Case:
+
+1. Criar uma página de busca de usuários do Github onde possamos digitar um username do Github e que retorne as seguintes informações:
+
+- Name, Username, Description, Followers, Following, Stars, Location e foto do usuário
+
+2. Além das informações acima, criar um meio de listar os repositórios de um usuário que foi encontrado por meio da busca em uma nova página, onde poderemos ordenar e filtrar a lista por quantidade de estrelas e/ou nome do repositório (crescente e descrescente).
