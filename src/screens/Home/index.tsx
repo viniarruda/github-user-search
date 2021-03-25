@@ -51,9 +51,10 @@ const Home = () => {
 
   if (error) return <p>Error: {error} </p>;
 
+  if (loading) return <Spinner loading={loading} />;
+
   return (
     <Grid flexDirection="column" justifyContent="center">
-      <Spinner loading={loading} />
       <Grid flexDirection="column" flex={1} p="0 40px" justifyContent="center">
         <Grid>
           <div>Search:</div>
