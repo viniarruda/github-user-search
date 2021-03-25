@@ -1,19 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { ApolloProvider } from '@apollo/client';
+import { ThemeProvider } from 'styled-components';
+
 import { graphqlService } from './services';
 
-import './index.css';
-// import App from './App';
+import { theme } from './components';
 
-// import Home from './screens/Home';
-import RepoDetails from './screens/RepoDetails';
+import Root from './routes';
 
 ReactDOM.render(
   <React.StrictMode>
     <ApolloProvider client={graphqlService.client}>
-      {/* <Home /> */}
-      <RepoDetails />
+      <ThemeProvider theme={theme.defaultTheme}>
+        <Root />
+      </ThemeProvider>
     </ApolloProvider>
   </React.StrictMode>,
   document.getElementById('root')

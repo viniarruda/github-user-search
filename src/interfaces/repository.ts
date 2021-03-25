@@ -13,3 +13,14 @@ export interface IRepository {
     nodes: IRepositoryDetails[];
   };
 }
+
+export enum DIRECTION_TYPES {
+  DESC = 'DESC',
+  ASC = 'ASC',
+}
+
+export enum FIELD_TYPES {
+  STARGAZERS = 'STARGAZERS',
+  NAME = 'NAME',
+  UPDATED_AT = 'UPDATED_AT',
+}

@@ -6,14 +6,24 @@ import { Grid, Spinner, Card } from '../../components';
 
 import { graphqlService } from '../../services';
 
-import { IRepositoryDetails } from '../../interfaces';
+import {
+  IRepositoryDetails,
+  DIRECTION_TYPES,
+  FIELD_TYPES,
+} from '../../interfaces';
 
 const RepoDetails = () => {
   const [fieldsValue, setFieldsValue] = useState<string>('stars');
   const [directionValue, setDirectionValue] = useState<string>('desc');
 
   const { loading, data, error } = useQuery(
-    graphqlService.queries.GET_REPO_DETAILS
+    graphqlService.queries.GET_REPO_DETAILS,
+    {
+      variables: {
+        field: FIELD_TYPES.STARGAZERS,
+        direction: DIRECTION_TYPES.DESC,
+      },
+    }
   );
 
   const { viewer } = data;

@@ -22,10 +22,10 @@ const GET_USER_INFO = gql`
 `;
 
 const GET_REPO_DETAILS = gql`
-  query GetRepoDetails {
+  query GetRepoDetails($field: String!, $direction: String!) {
     viewer {
       repositories(
-        orderBy: { field: STARGAZERS, direction: DESC }
+        orderBy: { field: $field, direction: $direction }
         first: 30
         privacy: PUBLIC
       ) {

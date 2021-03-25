@@ -6,7 +6,7 @@ type SubObject = {
   __typename: string;
 };
 
-const getTotalCount = (object: SubObject) => object.totalCount;
+const getTotalCount = (object: SubObject) => object?.totalCount || 0;
 
 const normalizeUserData = (user: IUser) => {
   const {
