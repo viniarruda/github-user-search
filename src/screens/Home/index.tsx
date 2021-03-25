@@ -7,6 +7,8 @@ import { graphqlService } from '../../services';
 
 import { normalizeUserData } from '../../utils/normalizer';
 
+import routes from '../../routes/constants';
+
 // import { IQueryState } from './interface';
 
 const Home = () => {
@@ -97,7 +99,10 @@ const Home = () => {
             </Grid>
           </Grid>
           <Grid m="20px 0" width="100%">
-            <Button color="primary" labelColor="reverse" to="/details">
+            <Button
+              color="primary"
+              labelColor="reverse"
+              to={routes.REPO_DETAILS}>
               See repositories
             </Button>
           </Grid>
