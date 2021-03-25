@@ -4,8 +4,7 @@ import {
   createHttpLink,
   NormalizedCacheObject,
 } from '@apollo/client';
-import {setContext} from '@apollo/client/link/context';
-// import fetch from 'cross-fetch';
+import { setContext } from '@apollo/client/link/context';
 
 import queries from './queries';
 import config from '../../config';
@@ -14,9 +13,9 @@ const httpLink = createHttpLink({
   uri: config.API_URL,
 });
 
-const authLink = setContext((_, {headers}) => {
+const authLink = setContext((_, { headers }) => {
   // get the authentication token from local storage if it exists
-  const token = 'e97ef83f5f0ad9307eef5fc29478cb38f575dbe4';
+  const token = process.env.REACT_APP_GITHUB_TOKEN;
   // return the headers to the context so httpLink can read them
   return {
     headers: {

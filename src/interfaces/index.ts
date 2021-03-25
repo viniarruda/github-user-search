@@ -1,3 +1,14 @@
-import {IUser, IUserNormalized} from './user';
+import { IUser, IUserNormalized } from './user';
 
-export type {IUser, IUserNormalized};
+import { IRepository, IRepositoryDetails } from './repository';
+
+import { TFlexDirection, TJustifyContent } from './layout';
+
+export type {
+  IUser,
+  IUserNormalized,
+  IRepository,
+  IRepositoryDetails,
+  TFlexDirection,
+  TJustifyContent,
+};

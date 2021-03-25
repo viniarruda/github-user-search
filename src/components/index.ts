@@ -2,4 +2,8 @@ import Grid from './Grid';
 
 import Avatar from './Image';
 
-export {Grid, Avatar};
+import Spinner from './Loading';
+
+import Card from './Card';
+
+export { Grid, Avatar, Spinner, Card };

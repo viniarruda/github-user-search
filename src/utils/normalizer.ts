@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
-import {IUser, IUserNormalized} from '../interfaces';
+import { IUser, IUserNormalized } from '../interfaces';
 
 type SubObject = {
   totalCount: number;
@@ -36,4 +36,4 @@ const normalizeUserData = (user: IUser) => {
   return normalizedData;
 };
 
-export {normalizeUserData};
+export { normalizeUserData };
