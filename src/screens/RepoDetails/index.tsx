@@ -1,3 +1,5 @@
+import { useState } from 'react';
+
 import { useQuery } from '@apollo/client';
 
 import { Grid, Spinner, Card } from '../../components';
@@ -7,6 +9,9 @@ import { graphqlService } from '../../services';
 import { IRepositoryDetails } from '../../interfaces';
 
 const RepoDetails = () => {
+  const [fieldsValue, setFieldsValue] = useState<string>('stars');
+  const [directionValue, setDirectionValue] = useState<string>('desc');
+
   const { loading, data, error } = useQuery(
     graphqlService.queries.GET_REPO_DETAILS
   );
@@ -14,6 +19,14 @@ const RepoDetails = () => {
   const { viewer } = data;
 
   if (error) return <p>Error: {error} </p>;
+
+  const onSelectedFields = (value: string) => {
+    setFieldsValue(value);
+  };
+
+  const onSelectedDirection = (value: string) => {
+    setDirectionValue(value);
+  };
 
   return (
     <Grid p="20px 20px" flex={1} flexDirection="column">
@@ -23,11 +36,21 @@ const RepoDetails = () => {
           <p>Filters:</p>
           <Grid flex={1}>
             <div>By:</div>
-            <select>
+            <select
+              value={fieldsValue}
+              onChange={(e) => onSelectedFields(e.target.value)}>
               <option selected value="stars">
                 Stars
               </option>
-              <option value="desc">Desc</option>
+              <option value="stars">Name</option>
+              <option value="stars">Updated_At</option>
+            </select>
+            <select
+              value={directionValue}
+              onChange={(e) => onSelectedDirection(e.target.value)}>
+              <option selected value="desc">
+                Desc
+              </option>
               <option value="asc">Asc</option>
             </select>
           </Grid>
