@@ -31,8 +31,6 @@ const normalizeUserData = (user: IUser) => {
     starredRepositories: getTotalCount(starredRepositories),
   };
 
-  console.log('user normalized', normalizedData);
-
   return normalizedData;
 };
 

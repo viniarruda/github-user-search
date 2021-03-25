@@ -35,6 +35,7 @@ const GET_REPO_DETAILS = gql`
           url
           name
           description
+          updatedAt
         }
       }
     }

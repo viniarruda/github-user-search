@@ -12,8 +12,6 @@ const Typography = ({
   color = 'reverse',
   fontSize = 'spacing14px',
 }: TTypographyProps) => {
-  console.log('children', children);
-
   const getVariant = {
     default: (
       <Paragraph color={color} fontWeight={fontWeight} fontSize={fontSize}>

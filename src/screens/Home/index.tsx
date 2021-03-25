@@ -1,42 +1,37 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { useQuery } from '@apollo/client';
+import { useLazyQuery } from '@apollo/client';
 
 import { Grid, Avatar, Spinner, Typography, Button } from '../../components';
-
 import { graphqlService } from '../../services';
-
 import { normalizeUserData } from '../../utils/normalizer';
-
 import routes from '../../routes/constants';
-
-// import { IQueryState } from './interface';
 
 const Home = () => {
   const [inputText, setInputText] = useState<string>('');
-  // const [fetchQuery, setFetchQuery] = useState<boolean>(false);
-  // const [queryResult, setQueryResult] = useState<IQueryState | null>(null);
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const keywordHandler = useRef<any>(null);
+  const [getUser, { loading, data, error }] = useLazyQuery(
+    graphqlService.queries.GET_USER_INFO
+  );
 
-  // const keywordHandler = useRef<any>(null);
+  useEffect(() => {
+    if (inputText) {
+      getUser({
+        variables: {
+          login: inputText,
+        },
+      });
+    }
+  }, [inputText, getUser]);
 
   const onChange = (keyword: string) => {
-    // if (keywordHandler.current) {
-    //   clearTimeout(keywordHandler.current);
-    // }
-    // keywordHandler.current = setTimeout(() => {
-    //   setInputText(keyword);
-    // }, 500);
-
-    setInputText(keyword);
-  };
-
-  const { loading, data, error } = useQuery(
-    graphqlService.queries.GET_USER_INFO,
-    {
-      variables: {
-        login: 'viniarruda',
-      },
+    if (keywordHandler.current) {
+      clearTimeout(keywordHandler.current);
     }
-  );
+    keywordHandler.current = setTimeout(() => {
+      setInputText(keyword);
+    }, 500);
+  };
 
   const {
     name,
@@ -59,7 +54,6 @@ const Home = () => {
         <Grid>
           <div>Search:</div>
           <input
-            value={inputText}
             onChange={(e) => onChange(e.target.value)}
             placeholder="github username"
           />
@@ -102,7 +96,7 @@ const Home = () => {
           <Grid m="20px 0" width="100%">
             <Button
               color="primary"
-              labelColor="reverse"
+              textColor="reverse"
               to={routes.REPO_DETAILS}>
               See repositories
             </Button>
@@ -112,5 +106,4 @@ const Home = () => {
     </Grid>
   );
 };
-
 export default Home;

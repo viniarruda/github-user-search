@@ -5,6 +5,8 @@ import {
   IRepositoryDetails,
   DIRECTION_TYPES,
   FIELD_TYPES,
+  TDirectionTypes,
+  TFieldTypes,
 } from './repository';
 
 import {
@@ -29,6 +31,8 @@ export type {
   TSpacingProps,
   TTypographyVariants,
   TTypographyProps,
+  TDirectionTypes,
+  TFieldTypes,
 };
 
 export { DIRECTION_TYPES, FIELD_TYPES };

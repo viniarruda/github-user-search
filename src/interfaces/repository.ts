@@ -5,6 +5,7 @@ export interface IRepositoryDetails {
   stargazerCount: number;
   url: string;
   __typename: string;
+  updatedAt: string;
 }
 
 export interface IRepository {
@@ -24,3 +25,7 @@ export enum FIELD_TYPES {
   NAME = 'NAME',
   UPDATED_AT = 'UPDATED_AT',
 }
+
+export type TFieldTypes = 'STARGAZERS' | 'NAME' | 'UPDATED_AT';
+
+export type TDirectionTypes = 'DESC' | 'ASC';

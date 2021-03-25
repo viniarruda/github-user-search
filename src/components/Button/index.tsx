@@ -5,7 +5,7 @@ import { TColorProps } from '../../interfaces';
 
 type TButtonProps = {
   color: TColorProps;
-  labelColor: TColorProps;
+  textColor: TColorProps;
   fullWidth?: boolean;
   children: string;
 };
@@ -15,7 +15,7 @@ const Button = styled(Link)<TButtonProps>`
   background-color: ${({ theme, color }) => theme.colors[color]};
   border-radius: ${({ theme }) => theme.units.spacing.spacing4px};
   width: ${({ fullWidth }) => (fullWidth ? '100%' : 'auto')};
-  color: ${({ theme, labelColor }) => theme.colors[labelColor]};
+  color: ${({ theme, textColor }) => theme.colors[textColor]};
   font-size: 12px;
   text-decoration: none;
   text-align: center;
