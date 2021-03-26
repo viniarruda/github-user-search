@@ -1,7 +1,14 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { useLazyQuery } from '@apollo/client';
 
-import { Grid, Avatar, Spinner, Typography, Button } from '../../components';
+import {
+  Grid,
+  Avatar,
+  Spinner,
+  Typography,
+  Button,
+  Input,
+} from '../../components';
 import { graphqlService } from '../../services';
 import { normalizeUserData } from '../../utils/normalizer';
 import routes from '../../routes/constants';
@@ -46,14 +53,15 @@ const Home = () => {
 
   if (error) return <p>Error: {error} </p>;
 
-  if (loading) return <Spinner loading={loading} />;
+  if (loading) return <Spinner testID="loading" loading={loading} />;
 
   return (
     <Grid flexDirection="column" justifyContent="center">
       <Grid flexDirection="column" flex={1} p="0 40px" justifyContent="center">
         <Grid>
           <div>Search:</div>
-          <input
+          <Input
+            testID="inputUsername"
             onChange={(e) => onChange(e.target.value)}
             placeholder="github username"
           />

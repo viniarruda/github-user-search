@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 type TSpinner = {
   loading: boolean;
+  testID?: string;
 };
 
 export const Spinner = styled.div`

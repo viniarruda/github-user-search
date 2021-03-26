@@ -40,3 +40,7 @@ export type TTypographyProps = {
   color?: TColorProps;
   fontSize?: TSpacingProps;
 };
+
+export type TTestProps = {
+  testID: string;
+};

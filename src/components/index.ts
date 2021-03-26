@@ -10,6 +10,8 @@ import Card from './Card';
 
 import Typography from './Typography';
 
+import Input from './Input';
+
 import theme from './theme';
 
-export { Grid, Avatar, Spinner, Card, Typography, Button, theme };
+export { Grid, Avatar, Spinner, Card, Typography, Button, Input, theme };

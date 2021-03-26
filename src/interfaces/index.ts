@@ -17,6 +17,7 @@ import {
   TSpacingProps,
   TTypographyVariants,
   TTypographyProps,
+  TTestProps,
 } from './layout';
 
 export type {
@@ -33,6 +34,7 @@ export type {
   TTypographyProps,
   TDirectionTypes,
   TFieldTypes,
+  TTestProps,
 };
 
 export { DIRECTION_TYPES, FIELD_TYPES };

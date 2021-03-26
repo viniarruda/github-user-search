@@ -64,6 +64,8 @@ const RepoDetails = () => {
     setDirectionValue(value);
   };
 
+  console.log('data', data);
+
   const viewer = data?.viewer;
 
   const repos = data?.viewer?.repositories?.nodes || [];
