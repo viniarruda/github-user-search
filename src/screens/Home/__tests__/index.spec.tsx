@@ -1,33 +1,27 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 import { fireEvent } from '@testing-library/react';
 import { renderHook } from '@testing-library/react-hooks';
 import { MockedProvider } from '@apollo/client/testing';
+import { render } from '@testing-library/react';
+import { ThemeProvider } from 'styled-components';
 
 import Home from '..';
 
-import {
-  useStateMock,
-  renderWithTheme,
-  queriesMocks,
-} from '../../../utils/tests/';
+import { useStateMock, queriesMocks } from '../../../utils/tests/';
 
-describe('Home Screen', () => {
-  // const { getByTestId, getByText } = renderWithTheme(
-  //   <MockedProvider mocks={queriesMocks.getUserMock} addTypename={false}>
-  //     <Home />
-  //   </MockedProvider>
-  // );
+import { theme } from '../../../components';
 
-  const tree = renderWithTheme(
-    <MockedProvider mocks={[queriesMocks.getUserMock]} addTypename={false}>
-      <Home />
-    </MockedProvider>
+describe.skip('Home Screen', () => {
+  const { getByTestId, getByText } = render(
+    <>
+      {/* @ts-ignore */}
+      <ThemeProvider theme={theme}>
+        <MockedProvider mocks={[queriesMocks.getUserMock]} addTypename={false}>
+          <Home />
+        </MockedProvider>
+      </ThemeProvider>
+    </>
   );
-
-  describe.only('test', () => {
-    it('test', () => {
-      console.log(tree.debug());
-    });
-  });
 
   describe('when the screen are loading', () => {
     it('should show spinner component', () => {

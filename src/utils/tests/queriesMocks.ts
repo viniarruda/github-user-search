@@ -29,7 +29,7 @@ const getUserMock = {
   },
 };
 
-const getRepoDetailsMock = {
+const getRepoDetails = {
   request: {
     query: graphqlService.queries.GET_REPO_DETAILS,
     variables: {
@@ -70,5 +70,5 @@ const getRepoDetailsMock = {
 
 export default {
   getUserMock,
-  getRepoDetailsMock,
+  getRepoDetails,
 };

@@ -52,9 +52,11 @@ const RepoDetails = () => {
     }
   );
 
+  console.log('data', data);
+
   if (error) return <p>Error: {error} </p>;
 
-  if (loading) return <Spinner loading={loading} />;
+  if (loading) return <Spinner testID="loading" loading={loading} />;
 
   const onSelectedFields = (value: FIELD_TYPES) => {
     setFieldsValue(value);
@@ -63,8 +65,6 @@ const RepoDetails = () => {
   const onSelectedDirection = (value: DIRECTION_TYPES) => {
     setDirectionValue(value);
   };
-
-  console.log('data', data);
 
   const viewer = data?.viewer;
 
