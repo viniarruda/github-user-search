@@ -5,3 +5,6 @@
 - Rename the `.env.example` to `.env` and add your token in variable `REACT_APP_GITHUB_TOKEN`
 
 - run `yarn start`
+
+
+Testing online [Here](https://brave-keller-9d6c9a.netlify.app/)
